@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gracias por tu compra | Dashboard de Factoring</title>
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text: #172033;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --warning-bg: #fff7ed;
+      --warning-border: #fed7aa;
+      --warning-text: #9a3412;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(22, 163, 74, 0.08), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 52px 42px 34px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: rgba(22, 163, 74, 0.12);
+      color: var(--success);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .content {
+      padding: 38px 42px 44px;
+    }
+
+    .download-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 30px;
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .download-box h2 {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .download-box p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 15px 26px;
+      border-radius: 14px;
+      transition: 0.2s ease;
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24);
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .section {
+      margin-top: 34px;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+      counter-reset: step;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #ffffff;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .info-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      background: #ffffff;
+    }
+
+    .info-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .warning {
+      margin-top: 34px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      color: var(--warning-text);
+      font-size: 0.95rem;
+    }
+
+    .support {
+      margin-top: 30px;
+      padding: 24px;
+      border-radius: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+    }
+
+    .support h2 {
+      margin-bottom: 8px;
+    }
+
+    .support p {
+      color: var(--muted);
+    }
+
+    .support a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 28px 14px;
+      }
+
+      .hero,
+      .content {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .hero {
+        padding-top: 38px;
+      }
+
+      .download-box {
+        padding: 24px 18px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        grid-template-columns: 36px 1fr;
+        padding: 16px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="card">
+
+      <div class="hero">
+        <div class="success-icon">✓</div>
+        <h1>Gracias por tu compra</h1>
+        <p class="subtitle">
+          Tu Dashboard de Factoring ya está listo para descargar. Aquí tienes el enlace al archivo y las instrucciones básicas para empezar a utilizarlo.
+        </p>
+      </div>
+
+      <div class="content">
+
+        <div class="download-box">
+          <h2>Descarga tu Dashboard de Factoring</h2>
+          <p>
+            Pulsa el botón para descargar el archivo ZIP con el dashboard y los ficheros necesarios para ejecutarlo en tu ordenador.
+          </p>
+
+          <a class="btn" href="https://drive.google.com/file/d/1W6_5NoP41m3DDJZLUYi-UUMXNj_5M4J9/view?usp=share_link" target="_blank" rel="noopener noreferrer">
+            Descargar dashboard
+            <span>↓</span>
+          </a>
+        </div>
+
+        <section class="section">
+          <h2>Instrucciones de uso</h2>
+
+          <div class="steps">
+            <div class="step">
+              <div>
+                <strong>Descarga el archivo ZIP</strong>
+                <span>
+                  Haz clic en el botón de descarga y guarda el archivo en una carpeta de tu ordenador.
+                </span>
+              </div>
+            </div>
+
+            <div class="step">
+              <div>
+                <strong>Descomprime el archivo</strong>
+                <span>
+                  Extrae el contenido del ZIP antes de ejecutar el dashboard. No lo abras directamente desde el archivo comprimido.
+                </span>
+              </div>
+            </div>
+
+            <div class="step">
+              <div>
+                <strong>Abre la aplicación DashboardFactoring.exe</strong>
+                <span>
+                  Dentro de la carpeta descomprimida encontrarás el ejecutable del dashboard. Ábrelo con doble clic.
+                </span>
+              </div>
+            </div>
+
+            <div class="step">
+              <div>
+                <strong>Importa tus archivos de SegoFinance</strong>
+                <span>
+                  Desde el propio dashboard podrás cargar los Excel necesarios para analizar tu cartera y tu histórico de operaciones.
+                </span>
+              </div>
+            </div>
+
+            <div class="step">
+              <div>
+                <strong>Consulta tus métricas</strong>
+                <span>
+                  Una vez importados los datos, podrás revisar tu cartera viva, rentabilidad, concentración por empresa, histórico de operaciones y próximas fechas de cobro.
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Qué incluye el dashboard</h2>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Cartera viva</h3>
+              <p>
+                Visualiza las operaciones abiertas, el capital invertido y la distribución por empresa.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Rentabilidad</h3>
+              <p>
+                Consulta la rentabilidad media, evolución histórica y datos agregados de tus operaciones.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Análisis por empresa</h3>
+              <p>
+                Revisa qué compañías tienen mejor historial, más operaciones y mejor relación rentabilidad/riesgo.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div class="warning">
+          <strong>Importante:</strong>
+          este dashboard es una herramienta de análisis de datos y seguimiento de cartera. No constituye asesoramiento financiero, no recomienda operaciones concretas y no garantiza rentabilidades futuras. Los cálculos no están auditados y deben revisarse siempre antes de tomar decisiones de inversión.
+        </div>
+
+        <section class="support">
+          <h2>Soporte</h2>
+          <p>
+            También recibirás un correo de confirmación con la información de compra. Si tienes cualquier problema con la descarga o con el uso inicial del dashboard, puedes responder a ese correo o escribirme directamente.
+          </p>
+        </section>
+
+      </div>
+    </section>
+
+    <footer>
+      Dashboard de Factoring · Herramienta independiente para análisis personal de cartera
+    </footer>
+  </main>
+</body>
+</html>

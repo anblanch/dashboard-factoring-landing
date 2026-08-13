@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Dashboard web para SegoFinance | Analiza tu cartera de factoring</title>
-  <meta name="description" content="Dashboard web de factoring para inversores de SegoFinance. Importa tus Excel y consulta rentabilidad, riesgo, mora, cartera viva y empresas desde cualquier dispositivo." />
+  <title>Dashboard de Factoring para SegoFinance | Analiza tu cartera</title>
+  <meta name="description" content="Convierte tus Excel de SegoFinance en un dashboard visual para analizar rentabilidad, beneficios, cobros, riesgo y cartera viva desde tu PC." />
   <meta name="keywords" content="dashboard factoring SegoFinance, dashboard para cartera de factoring, analizar cartera SegoFinance, herramienta para inversores factoring, rentabilidad factoring SegoFinance, análisis operaciones factoring, Excel SegoFinance dashboard, controlar inversión factoring, invertir en factoring, como invertir en factoring, cartera viva factoring, métricas factoring" />
   <meta name="author" content="Dashboard de Factoring" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -16,23 +16,34 @@
   <meta name="google-site-verification" content="lwTbjmG_URt6NmHaF0GnJcpMwwlThwc6qsTA37tQsCk" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
-  <meta property="og:title" content="Dashboard Factoring para datos de SegoFinance | Analiza tu cartera de factoring" />
-  <meta property="og:description" content="Convierte tus Excel de SegoFinance en un dashboard visual para controlar rentabilidad, riesgo, empresas, cartera viva, retrasos y beneficio acumulado." />
+  <meta property="og:title" content="Dashboard de escritorio para SegoFinance | Analiza tu cartera de factoring" />
+  <meta property="og:description" content="Analiza rentabilidad, beneficios, cobros, riesgo y cartera viva con tus propios Excel de SegoFinance." />
   <meta property="og:site_name" content="Dashboard de Factoring" />
   <meta property="og:url" content="https://dashboarddefactoring.com/" />
+  <meta property="og:image" content="https://dashboarddefactoring.com/og-dashboard-factoring.png" />
+  <meta property="og:image:secure_url" content="https://dashboarddefactoring.com/og-dashboard-factoring.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1729" />
+  <meta property="og:image:height" content="910" />
+  <meta property="og:image:alt" content="Dashboard de Factoring para analizar operaciones de SegoFinance" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dashboard para SegoFinance | Analiza tu cartera de factoring" />
-  <meta name="twitter:description" content="Accede a un dashboard web para analizar tus datos exportados de SegoFinance desde cualquier dispositivo." />
-  <link rel="icon" type="image/png" href="./favicon.png">
+  <meta name="twitter:title" content="Dashboard de Factoring para SegoFinance" />
+  <meta name="twitter:description" content="Convierte tus Excel en métricas claras para analizar tu cartera de factoring." />
+  <meta name="twitter:image" content="https://dashboarddefactoring.com/og-dashboard-factoring.png" />
+  <meta name="twitter:image:alt" content="Vista de un dashboard de factoring con métricas, gráfica y calendario de beneficios" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="./favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./favicon.svg" />
+  <link rel="manifest" href="./site.webmanifest" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Dashboard de Factoring para SegoFinance",
     "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Web",
-    "description": "Dashboard web para analizar operaciones de factoring exportadas desde SegoFinance mediante archivos Excel. Permite visualizar rentabilidad, beneficio acumulado, cartera viva, retrasos, concentración por empresa y rankings de compañías.",
+    "operatingSystem": "Windows",
+    "description": "Aplicación de escritorio para analizar operaciones de factoring exportadas desde SegoFinance mediante archivos Excel. Los datos se procesan localmente en el ordenador.",
     "offers": {
       "@type": "Offer",
       "price": "12.95",
@@ -543,6 +554,46 @@
     .chart-point-blue { fill: #2868ee; stroke: #ffffff; stroke-width: 3; animation-delay: 1.55s; }
     .chart-point-green { fill: #1fd26d; stroke: #ffffff; stroke-width: 3; animation-delay: 1.85s; }
 
+    /* Vista de evolución y calendario de cobros */
+    .chart-card .line-chart { display: none; }
+    .history-chart { width: 100%; height: auto; min-height: 300px; overflow: visible; }
+    .history-grid { stroke: #e6ebf3; stroke-width: 1; }
+    .history-axis { fill: #70809a; font-size: 11px; font-weight: 750; }
+    .history-axis-right { fill: #f59b0b; }
+    .history-bar { fill: #ffb74f; opacity: .9; }
+    .history-line { fill: none; stroke: #8359f6; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 7 6; }
+    .history-dot { fill: #8359f6; }
+    .history-legend { display: flex; align-items: center; justify-content: flex-end; gap: 15px; flex-wrap: wrap; color: #65738b; font-size: 12px; font-weight: 750; }
+    .history-legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .history-check { width: 16px; height: 16px; display: inline-grid; place-items: center; border-radius: 5px; color: #fff; background: #2868ee; font-size: 12px; line-height: 1; }
+    .history-dot-key { width: 10px; height: 10px; border-radius: 50%; background: #8359f6; }
+    .history-bar-key { width: 10px; height: 10px; border-radius: 3px; background: #f59b0b; }
+
+    .calendar-showcase { margin-top: 58px; }
+    .calendar-showcase .dashboard-heading { margin-bottom: 24px; }
+    .calendar-summary { display: flex; gap: 28px; align-items: flex-start; color: var(--muted); }
+    .calendar-summary strong { display: block; color: #16bd5d; font-size: 20px; line-height: 1.2; letter-spacing: -0.04em; }
+    .calendar-summary span { font-size: 12px; font-weight: 750; }
+    .calendar-card { padding: 26px 28px 22px; border: 1px solid var(--border); border-radius: 16px; background: #fff; box-shadow: 0 10px 26px rgba(15, 34, 56, .05); }
+    .calendar-top { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+    .calendar-top h4 { margin: 0 0 5px; font-size: 17px; letter-spacing: -0.035em; }
+    .calendar-top p { margin: 0; font-size: 13px; }
+    .calendar-grid-wrap { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; overflow-x: auto; padding-bottom: 5px; }
+    .calendar-days { display: grid; grid-template-rows: repeat(7, 14px); gap: 4px; padding-top: 1px; color: #91a0b6; font-size: 10px; font-weight: 750; line-height: 14px; }
+    .calendar-grid { display: grid; grid-template-columns: repeat(53, 14px); grid-template-rows: repeat(7, 14px); grid-auto-flow: column; gap: 4px; min-width: 948px; }
+    .calendar-cell { width: 14px; height: 14px; border-radius: 3px; border: 1px solid #e8edf3; background: #f8fafc; }
+    .calendar-cell.level-1 { background: #b6f4d1; border-color: #b6f4d1; }
+    .calendar-cell.level-2 { background: #79e9a9; border-color: #79e9a9; }
+    .calendar-cell.level-3 { background: #41d780; border-color: #41d780; }
+    .calendar-cell.level-4 { background: #16a64c; border-color: #16a64c; }
+    .calendar-footer { display: flex; justify-content: flex-end; align-items: center; gap: 9px; margin-top: 18px; color: #7b899f; font-size: 11px; font-weight: 750; }
+    .calendar-scale { display: flex; gap: 4px; }
+    .calendar-scale i { width: 14px; height: 14px; border-radius: 3px; border: 1px solid #e8edf3; background: #f8fafc; }
+    .calendar-scale i:nth-child(2) { background: #b6f4d1; border-color: #b6f4d1; }
+    .calendar-scale i:nth-child(3) { background: #79e9a9; border-color: #79e9a9; }
+    .calendar-scale i:nth-child(4) { background: #41d780; border-color: #41d780; }
+    .calendar-scale i:nth-child(5) { background: #16a64c; border-color: #16a64c; }
+
     @keyframes drawLine { to { stroke-dashoffset: 0; } }
     @keyframes popPoint { to { opacity: 1; transform: scale(1); } }
 
@@ -734,6 +785,7 @@
       .faq-grid { grid-template-columns: 1fr 1fr; }
       .dashboard-heading,
       .chart-header { flex-direction: column; }
+      .calendar-top { flex-direction: column; }
       .footer,
       .copyright { text-align: left; }
       .footer-links { justify-content: flex-start; }
@@ -758,6 +810,8 @@
       .dashboard-shell { padding: 18px; }
       .metric-card { min-height: 104px; }
       .line-chart { height: 240px; }
+      .calendar-card { padding: 20px 18px; }
+      .calendar-summary { gap: 18px; }
       .footer { padding: 64px 0; }
       .footer-disclaimer { margin-top: 22px; font-size: 10px; text-align: left; }
     }
@@ -816,9 +870,9 @@
     <section class="hero">
       <div class="container">
 
-        <span class="hero-badge">Acceso web privado</span>
+        <span class="hero-badge">Aplicación local para Windows</span>
 
-        <h1>Convierte tus Excel de SegoFinance en un dashboard web para entender mejor tu cartera de factoring.</h1>
+        <h1>Convierte tus Excel de SegoFinance en un dashboard para optimizar tu rentabilidad.</h1>
 
         <p>
           Analiza rentabilidad, riesgo, retrasos, beneficio acumulado, cartera viva y concentración por empresa
@@ -833,8 +887,8 @@
         <div class="hero-proof" aria-label="Características principales">
           <span>✓ Compatible con Excel de SegoFinance</span>
           <span>✓ Pago único</span>
-          <span>✓ Acceso desde móvil, tablet y ordenador</span>
-          <span>✓ Sin instalación</span>
+          <span>✓ Se instala y usa en tu PC Windows</span>
+          <span>✓ Tus datos se procesan localmente</span>
           <span>✓ Sin suscripciones</span>
         </div>
       </div>
@@ -844,7 +898,7 @@
       <div class="container split">
         <div>
           <span class="eyebrow">Qué estás comprando</span>
-          <h2>Un dashboard privado para entender mejor tus operaciones de factoring.</h2>
+          <h2>Una aplicación de escritorio para entender mejor tus operaciones de factoring.</h2>
           <p>
             Esta herramienta no es un ebook ni una plantilla genérica. Es un dashboard diseñado para importar
             los archivos de SegoFinance y transformar tus operaciones en métricas claras para ayudarte a detectar
@@ -863,7 +917,7 @@
           <div class="brand-logo">FA</div>
           <h3>Dashboard de Factoring para SegoFinance</h3>
           <p>
-            Un espacio web para analizar tu cartera con datos reales exportados desde la plataforma.
+            Una aplicación para Windows que analiza tu cartera con datos reales exportados desde la plataforma.
           </p>
 
           <div class="product-preview">
@@ -1007,18 +1061,18 @@
           <div class="subsection-title">
             <span class="eyebrow">Evolución histórica</span>
             <h3>Rentabilidad y beneficios</h3>
-            <p>Rentabilidad anualizada media acumulada y beneficio acumulado de operaciones cobradas.</p>
+            <p>Rentabilidad anualizada media acumulada, media mensual y beneficio de las operaciones cobradas.</p>
           </div>
 
           <article class="chart-card">
             <div class="chart-header">
               <div>
-                <h4>Evolución de rentabilidad y beneficios</h4>
-                <p>Visualiza cómo evoluciona la rentabilidad y el beneficio acumulado con el paso del tiempo.</p>
+                <h4>Rentabilidad y ganancias mensuales</h4>
+                <p>Compara la rentabilidad media de cada mes con el dinero ganado en tus operaciones cobradas.</p>
               </div>
-              <div class="legend">
-                <span><i class="dot"></i> Rentabilidad acumulada</span>
-                <span><i class="dot green"></i> Beneficio acumulado</span>
+              <div class="history-legend" aria-label="Series activas del gráfico">
+                <span><i class="history-check">✓</i><i class="history-dot-key"></i> Rentabilidad media mensual</span>
+                <span><i class="history-check">✓</i><i class="history-bar-key"></i> Ganancia mensual</span>
               </div>
             </div>
 
@@ -1073,7 +1127,44 @@
               <text class="chart-axis-text" fill="#1fd26d" x="864" y="34">197 €</text>
               <text class="chart-axis-text" fill="#2868ee" x="860" y="92">6.50 %</text>
             </svg>
+            <svg class="history-chart" viewBox="0 0 1040 320" role="img" aria-label="Rentabilidad media mensual y ganancias mensuales">
+              <g class="history-grid"><line x1="58" y1="35" x2="962" y2="35"/><line x1="58" y1="91" x2="962" y2="91"/><line x1="58" y1="147" x2="962" y2="147"/><line x1="58" y1="203" x2="962" y2="203"/><line x1="58" y1="259" x2="962" y2="259"/><line x1="58" y1="35" x2="58" y2="259"/><line x1="962" y1="35" x2="962" y2="259"/></g>
+              <g class="history-axis"><text x="5" y="39">7.9 %</text><text x="5" y="95">7.3 %</text><text x="5" y="151">6.7 %</text><text x="5" y="207">6.2 %</text><text x="5" y="263">5.6 %</text></g>
+              <g class="history-axis history-axis-right"><text x="970" y="39">41 €</text><text x="970" y="95">31 €</text><text x="970" y="151">20 €</text><text x="970" y="207">10 €</text><text x="970" y="263">0 €</text></g>
+              <g class="history-bar"><rect x="78" y="256" width="22" height="3"/><rect x="138" y="240" width="22" height="19"/><rect x="198" y="199" width="22" height="60"/><rect x="258" y="137" width="22" height="122"/><rect x="318" y="137" width="22" height="122"/><rect x="378" y="209" width="22" height="50"/><rect x="438" y="110" width="22" height="149"/><rect x="498" y="137" width="22" height="122"/><rect x="558" y="159" width="22" height="100"/><rect x="618" y="161" width="22" height="98"/><rect x="678" y="221" width="22" height="38"/><rect x="738" y="174" width="22" height="85"/><rect x="798" y="130" width="22" height="129"/><rect x="858" y="55" width="22" height="204"/><rect x="918" y="131" width="22" height="128"/></g>
+              <path class="history-line" d="M89 175 L149 237 L209 187 L269 189 L329 202 L389 172 L449 199 L509 201 L569 224 L629 74 L689 63 L749 92 L809 100 L869 99 L929 101"/>
+              <g class="history-dot"><circle cx="89" cy="175" r="3.6"/><circle cx="149" cy="237" r="3.6"/><circle cx="209" cy="187" r="3.6"/><circle cx="269" cy="189" r="3.6"/><circle cx="329" cy="202" r="3.6"/><circle cx="389" cy="172" r="3.6"/><circle cx="449" cy="199" r="3.6"/><circle cx="509" cy="201" r="3.6"/><circle cx="569" cy="224" r="3.6"/><circle cx="629" cy="74" r="3.6"/><circle cx="689" cy="63" r="3.6"/><circle cx="749" cy="92" r="3.6"/><circle cx="809" cy="100" r="3.6"/><circle cx="869" cy="99" r="3.6"/><circle cx="929" cy="101" r="3.6"/></g>
+              <g class="history-axis"><text x="72" y="283">06/2025</text><text x="192" y="283">08/2025</text><text x="312" y="283">10/2025</text><text x="432" y="283">12/2025</text><text x="552" y="283">02/2026</text><text x="672" y="283">04/2026</text><text x="792" y="283">06/2026</text><text x="912" y="283">08/2026</text></g>
+            </svg>
           </article>
+
+          <section class="calendar-showcase" aria-label="Calendario de beneficios">
+            <div class="dashboard-heading">
+              <div>
+                <span class="eyebrow">Ritmo de cobros</span>
+                <h3>Calendario de beneficios</h3>
+              </div>
+              <p>Cada cuadrado representa el beneficio generado en un día de cobros. Un verde más intenso indica un importe mayor.</p>
+            </div>
+
+            <article class="calendar-card">
+              <div class="calendar-top">
+                <div>
+                  <h4>Actividad de los últimos 12 meses</h4>
+                  <p>10 ago 2025 — 11 ago 2026</p>
+                </div>
+                <div class="calendar-summary" aria-label="Resumen de beneficio">
+                  <div><strong>256,69 €</strong><span>beneficio</span></div>
+                  <div><strong>17,61 €</strong><span>mejor día</span></div>
+                </div>
+              </div>
+              <div class="calendar-grid-wrap">
+                <div class="calendar-days" aria-hidden="true"><span></span><span>L</span><span></span><span>X</span><span></span><span>V</span><span></span></div>
+                <div id="benefits-calendar" class="calendar-grid" role="img" aria-label="Calendario de actividad de beneficios de los últimos doce meses"></div>
+              </div>
+              <div class="calendar-footer"><span>Hasta 1,25 €</span><span class="calendar-scale" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>Más de 5 €</span></div>
+            </article>
+          </section>
 
           <div class="subsection-title">
             <span class="eyebrow">Cartera viva</span>
@@ -1209,17 +1300,17 @@
 </section>
     <section id="precios" class="pricing">
       <div class="container centered">
-        <span class="eyebrow">Acceso al dashboard</span>
+        <span class="eyebrow">Aplicación de escritorio</span>
         <h2>Toma mejores decisiones con tus datos de SegoFinance.</h2>
         <p class="section-intro">
-          Compra el acceso al dashboard web e importa tus propios Excel para revisar la evolución de tu cartera desde
-          cualquier dispositivo, sin instalaciones ni depender de hojas de cálculo manuales.
+          Recibe la aplicación para Windows, instálala en tu ordenador e importa tus propios Excel para revisar
+          la evolución de tu cartera sin depender de hojas de cálculo manuales.
         </p>
 
         <article class="price-card">
           <div class="price-head">
             <h3>Pago único</h3>
-            <div class="price"><strong>12,95€</strong></div>
+            <div class="price"><strong>5,95€</strong></div>
           </div>
 
           <div class="price-body">
@@ -1227,8 +1318,8 @@
               <li><span class="check">✓</span> Dashboard preparado para datos exportados desde SegoFinance.</li>
               <li><span class="check">✓</span> Métricas de rentabilidad, beneficio, duración, mora y cartera viva.</li>
               <li><span class="check">✓</span> Rankings de empresas por beneficio y por relación rentabilidad/riesgo.</li>
-              <li><span class="check">✓</span> Acceso web sin instalación desde móvil, tablet u ordenador.</li>
-              <li><span class="check">✓</span> Instrucciones de acceso enviadas tras la compra.</li>
+              <li><span class="check">✓</span> Aplicación de escritorio para Windows, sin acceso web.</li>
+              <li><span class="check">✓</span> Instrucciones de descarga e instalación enviadas tras la compra.</li>
             </ul>
 
             <a class="button button-primary button-block" href="https://buy.stripe.com/5kQ00k9dJfjYa9h9aW2Ry00">Comprar ahora</a>
@@ -1262,12 +1353,12 @@
 
           <article class="faq-card">
             <h3>¿Necesito instalar algo?</h3>
-            <p>No. El dashboard se abre en el navegador: podrás utilizarlo desde móvil, tablet u ordenador.</p>
+            <p>Sí. Recibirás un archivo .exe para instalar y utilizar el dashboard en un ordenador con Windows.</p>
           </article>
 
           <article class="faq-card">
-            <h3>¿Cómo recibo mi acceso?</h3>
-            <p>Tras la compra recibirás por correo las instrucciones para acceder al dashboard web y empezar a importar tus Excel.</p>
+            <h3>¿Cómo recibo la aplicación?</h3>
+            <p>Tras la compra recibirás por correo las instrucciones de descarga, instalación y uso del archivo .exe.</p>
           </article>
         </div>
       </div>
@@ -1314,5 +1405,23 @@
       </p>
     </div>
   </footer>
+  <script>
+    (() => {
+      const calendar = document.getElementById('benefits-calendar');
+      if (!calendar) return;
+
+      // Patrón determinista de ejemplo: representa cobros repartidos a lo largo de 12 meses.
+      const activity = new Set([1, 4, 7, 12, 19, 27, 34, 38, 43, 51, 56, 62, 68, 73, 80, 84, 90, 96, 101, 108, 113, 119, 126, 132, 137, 141, 146, 151, 158, 164, 170, 176, 183, 188, 194, 202, 209, 215, 220, 228, 234, 240, 247, 253, 260, 268, 276, 284, 291, 298, 305, 312, 319, 326, 333, 340, 347, 354, 361]);
+      const strong = new Set([1, 43, 73, 90, 141, 176, 215, 260, 305, 333, 354]);
+      const medium = new Set([7, 34, 51, 68, 84, 101, 119, 126, 158, 183, 202, 228, 247, 276, 291, 319, 340]);
+
+      for (let day = 0; day < 371; day += 1) {
+        const cell = document.createElement('span');
+        cell.className = 'calendar-cell';
+        if (activity.has(day)) cell.classList.add(strong.has(day) ? 'level-4' : medium.has(day) ? 'level-3' : day % 3 === 0 ? 'level-2' : 'level-1');
+        calendar.appendChild(cell);
+      }
+    })();
+  </script>
 </body>
 </html>

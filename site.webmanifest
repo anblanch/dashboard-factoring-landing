@@ -1,0 +1,12 @@
+{
+  "name": "Dashboard de Factoring",
+  "short_name": "Factoring",
+  "description": "Dashboard de escritorio para analizar tu cartera de factoring de SegoFinance.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0068ad",
+  "icons": [
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -112,6 +112,36 @@
       margin-bottom: 24px;
     }
 
+    .download-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      text-align: left;
+    }
+
+    .download-option {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #ffffff;
+    }
+
+    .download-option strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .download-option span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .file-name {
+      color: var(--text);
+      font-weight: 700;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -130,6 +160,18 @@
     .btn:hover {
       background: var(--primary-dark);
       transform: translateY(-2px);
+    }
+
+    .download-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 22px 0 24px;
+      flex-wrap: wrap;
+    }
+
+    .download-actions .btn {
+      flex: 1 1 240px;
     }
 
     .section {
@@ -270,6 +312,10 @@
         grid-template-columns: 1fr;
       }
 
+      .download-options {
+        grid-template-columns: 1fr;
+      }
+
       .step {
         grid-template-columns: 36px 1fr;
         padding: 16px;
@@ -277,6 +323,10 @@
 
       .btn {
         width: 100%;
+      }
+
+      .download-actions {
+        gap: 10px;
       }
     }
   </style>
@@ -290,7 +340,7 @@
         <div class="success-icon">✓</div>
         <h1>Gracias por tu compra</h1>
         <p class="subtitle">
-          Gracias por confiar en Dashboard de Factoring. Recibirás la aplicación de escritorio para usarla en tu ordenador con Windows.
+          Gracias por confiar en Dashboard de Factoring. En unos minutos recibirás por correo tu aplicación de escritorio y una guía rápida para empezar.
         </p>
       </div>
 
@@ -299,8 +349,22 @@
         <div class="access-box">
           <h2>Tu aplicación de escritorio</h2>
           <p>
-            Recibirás por correo el enlace de descarga y las instrucciones para instalar el archivo .exe en tu PC Windows.
+            Puedes descargarla ahora mismo. Elige la versión que corresponda a tu ordenador.
           </p>
+          <div class="download-actions">
+            <a class="btn" href="https://drive.google.com/drive/folders/1AxjuNsXa7pS9QCYdSYCRr5a_I_ThwJNp?usp=sharing" target="_blank" rel="noopener noreferrer">🪟 Descargar para Windows</a>
+            <a class="btn" href="https://drive.google.com/drive/folders/1AxjuNsXa7pS9QCYdSYCRr5a_I_ThwJNp?usp=sharing" target="_blank" rel="noopener noreferrer"> Descargar para Mac</a>
+          </div>
+          <div class="download-options">
+            <div class="download-option">
+              <strong>🪟 Si tienes Windows</strong>
+              <span>Descarga <span class="file-name">DashboardFactoring.exe</span>, haz doble clic y se abrirá el dashboard.</span>
+            </div>
+            <div class="download-option">
+              <strong> Si tienes Mac</strong>
+              <span>Descarga <span class="file-name">Dashboard Factoring.app</span>, ábrela con doble clic y confirma la apertura si macOS te lo solicita.</span>
+            </div>
+          </div>
         </div>
 
         <section class="section">
@@ -309,36 +373,36 @@
           <div class="steps">
             <div class="step">
               <div>
-                <strong>Revisa tu correo</strong>
-                <span>
-                  Te enviaremos el enlace de descarga y las indicaciones necesarias para instalar la aplicación.
+              <strong>Revisa tu correo</strong>
+              <span>
+                  También recibirás un correo de confirmación con los enlaces de descarga y estas instrucciones para que puedas empezar sin complicaciones.
                 </span>
               </div>
             </div>
 
             <div class="step">
               <div>
-                <strong>Descarga el archivo .exe</strong>
-                <span>
-                  Descarga el instalador desde el enlace recibido y guárdalo en tu ordenador con Windows.
+              <strong>Descarga la versión para tu ordenador</strong>
+              <span>
+                  Haz clic en el botón de Windows o Mac de esta página. Si usas Windows, descarga el archivo <strong>.exe</strong>. Si usas Mac, descarga la aplicación <strong>.app</strong> incluida en el archivo descargado.
                 </span>
               </div>
             </div>
 
             <div class="step">
               <div>
-                <strong>Instala y abre la aplicación</strong>
-                <span>
-                  Ejecuta el archivo .exe y sigue el asistente de instalación. No necesitas crear una cuenta ni iniciar sesión.
+              <strong>Abre la aplicación</strong>
+              <span>
+                  Haz doble clic sobre el archivo descargado. El dashboard se abrirá directamente: no necesitas crear una cuenta ni iniciar sesión.
                 </span>
               </div>
             </div>
 
             <div class="step">
               <div>
-                <strong>Importa tus archivos de SegoFinance</strong>
-                <span>
-                  Desde el propio dashboard podrás cargar los Excel necesarios para analizar tu cartera y tu histórico de operaciones.
+              <strong>Importa tus Excel de SegoFinance</strong>
+              <span>
+                  En la pantalla de importación, selecciona los dos Excel requeridos: operaciones y el histórico. El dashboard procesará los datos y cargará tus métricas.
                 </span>
               </div>
             </div>
@@ -389,7 +453,7 @@
         <section class="support">
           <h2>Soporte</h2>
           <p>
-            También recibirás un correo de confirmación con la información de compra. Si necesitas ayuda con la descarga, la instalación o la importación inicial de tus Excel, puedes responder a ese correo o escribirme directamente.
+            Si necesitas ayuda con la descarga, la apertura de la aplicación o la importación de tus Excel, escribe a <a href="mailto:an.blanch.dev@gmail.com">an.blanch.dev@gmail.com</a>.
           </p>
         </section>
 
